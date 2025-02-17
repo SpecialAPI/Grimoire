@@ -1,4 +1,4 @@
-﻿global using static Grimoire.Plugin;
+﻿global using static Grimoire.GrimoirePlugin;
 
 using BepInEx;
 using Grimoire.Content.FieldEffects;
@@ -11,11 +11,11 @@ using System;
 namespace Grimoire
 {
     [BepInPlugin(MODGUID, MODNAME, MODVERSION)]
-    public class Plugin : BaseUnityPlugin
+    public class GrimoirePlugin : BaseUnityPlugin
     {
         public const string MODGUID = "BrutalOrchestraModding.Grimoire";
         public const string MODNAME = "Grimoire";
-        public const string MODVERSION = "1.0.0";
+        public const string MODVERSION = "0.0.1";
         public const string MODPREFIX = "Grimoire";
 
         internal void Awake()
