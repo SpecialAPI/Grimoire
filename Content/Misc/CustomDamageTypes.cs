@@ -6,7 +6,7 @@ namespace Grimoire.Content.Misc
 {
     public static class CustomDamageTypes
     {
-        public static readonly string DisappearingDamage = $"{MODPREFIX}_DisapearingDamage";
+        public static readonly string DisappearingDamage = $"{MOD_PREFIX}_DisapearingDamage";
 
         internal static void Init()
         {

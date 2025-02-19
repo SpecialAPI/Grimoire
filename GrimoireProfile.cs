@@ -13,8 +13,7 @@ namespace Grimoire
             if(_initialized)
                 return;
 
-            var profile = ProfileManager.RegisterMod();
-            profile.SetGuidAndPrefix(MODGUID, MODPREFIX);
+            var profile = ProfileManager.RegisterMod(MOD_GUID, MOD_PREFIX);
             profile.LoadAssetBundle("grimoirebundle");
 
             _initialized = true;

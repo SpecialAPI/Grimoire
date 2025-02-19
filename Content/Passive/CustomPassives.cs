@@ -190,7 +190,7 @@ namespace Grimoire.Content.Passive
 
                     effect = new PerformEffectTriggerEffect(new()
                     {
-                        Effects.GenerateEffect(CreateScriptable<RemoveFieldEffectEffect>(x => x.field = StatusField.Constricted), 0, Targeting.Slot_SelfAll),
+                        Effects.GenerateEffect(CreateScriptable<RemoveFieldEffectEffect>(x => x._field = StatusField.Constricted), 0, Targeting.Slot_SelfAll),
                         Effects.GenerateEffect(CreateScriptable<SwapToOneSideEffect>(x => x._swapRight = false), 0, Targeting.Slot_SelfSlot),
                     })
                 }

@@ -52,3 +52,4 @@ global using Object = UnityEngine.Object;
 global using Random = UnityEngine.Random;
 
 global using static LoadedAssetsHandler;
+global using static Grimoire.GrimoirePlugin;
