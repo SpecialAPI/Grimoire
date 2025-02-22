@@ -9,7 +9,7 @@ namespace Grimoire.Content.TriggerEffects
         public int invincibility;
         public UnitStoreData_BasicSO invincibilityStoredValue;
 
-        public override void DoEffect(IUnit sender, object args, TriggeredEffect triggerInfo, object activator = null)
+        public override void DoEffect(IUnit sender, object args, TriggeredEffect triggerInfo, TriggerEffectExtraInfo extraInfo)
         {
             if (args is not DamageReceivedValueChangeException ex)
                 return;
@@ -21,25 +21,24 @@ namespace Grimoire.Content.TriggerEffects
 
             inv = Mathf.Max(inv, 0);
 
-            if (!activator.TryGetActivatorNameAndSprite(out var name, out var sprite))
-            {
-                name = null;
-                sprite = null;
-            }
+            if (!triggerInfo.doesPopup || !extraInfo.TryGetPopupUIAction(sender.ID, sender.IsUnitCharacter, false, out var action))
+                action = null;
 
-            ex.AddModifier(new InvincibleIntValueModifier(inv, sender, name, sprite));
+            ex.AddModifier(new InvincibleIntValueModifier(inv, action));
         }
+
+        public override bool ManuallyHandlePopup => true;
     }
 
-    public class InvincibleIntValueModifier(int invincibility, IUnit unit, string passiveName, Sprite passiveSprite) : IntValueModifier(100)
+    public class InvincibleIntValueModifier(int invincibility, CombatAction popupUIAction) : IntValueModifier(100)
     {
         public override int Modify(int value)
         {
             if (value > invincibility)
                 return value;
 
-            if (unit != null && (!string.IsNullOrEmpty(passiveName) || passiveSprite != null))
-                CombatManager.Instance.AddUIAction(new ShowPassiveInformationUIAction(unit.ID, unit.IsUnitCharacter, passiveName, passiveSprite));
+            if (popupUIAction != null)
+                CombatManager.Instance.AddUIAction(popupUIAction);
 
             return 0;
         }

@@ -8,7 +8,7 @@ namespace Grimoire.Content.TriggerEffects
     {
         public List<ExtraAbilityInfo> abilites;
 
-        public override void DoEffect(IUnit sender, object args, TriggeredEffect triggerInfo, object activator = null)
+        public override void DoEffect(IUnit sender, object args, TriggeredEffect triggerInfo, TriggerEffectExtraInfo extraInfo)
         {
             if (args is not List<string> performed)
                 return;

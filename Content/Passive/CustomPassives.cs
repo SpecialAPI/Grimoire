@@ -50,6 +50,7 @@ namespace Grimoire.Content.Passive
         private static readonly Dictionary<int, BasePassiveAbilitySO> GeneratedVolatile = [];
         private static readonly Dictionary<int, BasePassiveAbilitySO> GeneratedInvincible = [];
         private static readonly Dictionary<int, BasePassiveAbilitySO> GeneratedWarts = [];
+        private static readonly Dictionary<int, BasePassiveAbilitySO> GeneratedProtected = [];
 
         static CustomPassives()
         {
@@ -207,7 +208,7 @@ namespace Grimoire.Content.Passive
                 {
                     trigger = TriggerCalls.OnWillApplyDamage.ToString(),
                     immediate = true,
-                    doesPopup = false,
+                    doesPopup = true,
 
                     effect = new ConnoisseurDamageModifierSetterTriggerEffect()
                 }
@@ -380,7 +381,7 @@ namespace Grimoire.Content.Passive
                 {
                     trigger = TriggerCalls.OnBeingDamaged.ToString(),
                     immediate = true,
-                    doesPopup = false,
+                    doesPopup = true,
 
                     effect = new InterpolatedDamageModifierSetterTriggerEffect()
                     {
@@ -448,7 +449,7 @@ namespace Grimoire.Content.Passive
                 {
                     trigger = TriggerCalls.OnBeingDamaged.ToString(),
                     immediate = true,
-                    doesPopup = false,
+                    doesPopup = true,
 
                     effect = new MultiplierWithPerformEffectDamageModifierSetterTriggerEffect()
                     {
@@ -473,6 +474,37 @@ namespace Grimoire.Content.Passive
 
         internal static void Init()
         {
+        }
+
+        public static BasePassiveAbilitySO ProtectedGenerator(int count)
+        {
+            return GetOrCreatePassive(GeneratedProtected, count, x =>
+            {
+                var pa = NewPassive<MultiCustomTriggerEffectPassive>($"Protected_{x}_PA", "Protected")
+                    .SetBasicInformation($"Protected ({x})", StatusField.Shield.EffectInfo.icon) // TODO: add unique passive icon
+                    .AutoSetDescriptions($"Permanently applies {x} shield to this ally's position.");
+
+                var effect = new EffectsAndTrigger()
+                {
+                    trigger = TriggerCalls.OnMoved.ToString(),
+                    immediate = true,
+                    doesPopup = true,
+
+                    effect = new AllInOnePermaFieldEffectApplicationTriggerEffect()
+                    {
+                        amount = x,
+                        applyOnAllySlots = true,
+                        field = StatusField.Shield,
+                        targetOffsets = [0]
+                    }
+                };
+
+                pa.SetConnectionEffects([effect]);
+                pa.SetDisconnectionEffects([effect]);
+                pa.SetTriggerEffects([effect]);
+
+                return pa;
+            });
         }
 
         public static BasePassiveAbilitySO DisguisedGenerator(CharacterSO disguisedTransformation, CharacterSO nonDisguisedTransformation)
@@ -528,7 +560,7 @@ namespace Grimoire.Content.Passive
                 {
                     trigger = TriggerCalls.OnBeingDamaged.ToString(),
                     immediate = true,
-                    doesPopup = false,
+                    doesPopup = true,
 
                     effect = new MultiplierWithPerformEffectDamageModifierSetterTriggerEffect()
                     {
@@ -623,7 +655,6 @@ namespace Grimoire.Content.Passive
                     }
                 }
             });
-
             pa.SetTriggerEffects(new()
             {
                 new()
@@ -688,7 +719,7 @@ namespace Grimoire.Content.Passive
                     new()
                     {
                         trigger = TriggerCalls.OnBeingDamaged.ToString(),
-                        doesPopup = false,
+                        doesPopup = true,
                         immediate = true,
 
                         effect = new InvincibleDamageModifierSetterTriggerEffect()
@@ -716,7 +747,7 @@ namespace Grimoire.Content.Passive
                     new()
                     {
                         trigger = TriggerCalls.OnBeingDamaged.ToString(),
-                        doesPopup = false,
+                        doesPopup = true,
                         immediate = true,
 
                         effect = new DamageCapDamageModifierSetterTriggerEffect()
@@ -750,7 +781,7 @@ namespace Grimoire.Content.Passive
                     new()
                     {
                         trigger = TriggerCalls.OnBeingDamaged.ToString(),
-                        doesPopup = false,
+                        doesPopup = true,
                         immediate = true,
 
                         effect = new DamageCapDamageModifierSetterTriggerEffect()
@@ -898,7 +929,7 @@ namespace Grimoire.Content.Passive
             }
 
             return
-                PassiveBuilder.NewPassive<MultiCustomTriggerEffectPassive>(string.Format(id, pigmentsId), string.Format(passiveId, pigmentsId))
+                NewPassive<MultiCustomTriggerEffectPassive>(string.Format(id, pigmentsId), string.Format(passiveId, pigmentsId))
                 .SetBasicInformation(string.Format(coreName, pigmentsString), passiveSprite)
                 .AutoSetDescriptions(string.Format(coreDescription, pigmentsString))
                 .SetConnectionEffects(new()

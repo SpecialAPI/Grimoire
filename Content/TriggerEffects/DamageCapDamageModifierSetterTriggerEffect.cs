@@ -10,7 +10,7 @@ namespace Grimoire.Content.TriggerEffects
         public int damageCapMax;
         public UnitStoreData_BasicSO damageCapStoredValue;
 
-        public override void DoEffect(IUnit sender, object args, TriggeredEffect triggerInfo, object activator = null)
+        public override void DoEffect(IUnit sender, object args, TriggeredEffect triggerInfo, TriggerEffectExtraInfo extraInfo)
         {
             if (args is not DamageReceivedValueChangeException ex)
                 return;
@@ -22,25 +22,24 @@ namespace Grimoire.Content.TriggerEffects
 
             cap = Mathf.Max(cap, 0);
 
-            if(!activator.TryGetActivatorNameAndSprite(out var name, out var sprite))
-            {
-                name = null;
-                sprite = null;
-            }
+            if (!triggerInfo.doesPopup || !extraInfo.TryGetPopupUIAction(sender.ID, sender.IsUnitCharacter, false, out var action))
+                action = null;
 
-            ex.AddModifier(new DamageCapIntValueModifier(cap, sender, name, sprite));
+            ex.AddModifier(new DamageCapIntValueModifier(cap, action));
         }
+
+        public override bool ManuallyHandlePopup => true;
     }
 
-    public class DamageCapIntValueModifier(int damageCapMax, IUnit unit, string passiveName, Sprite passiveSprite) : IntValueModifier(98)
+    public class DamageCapIntValueModifier(int damageCapMax, CombatAction popupUIAction = null) : IntValueModifier(98)
     {
         public override int Modify(int value)
         {
             if (value <= damageCapMax)
                 return value;
 
-            if (unit != null && (!string.IsNullOrEmpty(passiveName) || passiveSprite != null))
-                CombatManager.Instance.AddUIAction(new ShowPassiveInformationUIAction(unit.ID, unit.IsUnitCharacter, passiveName, passiveSprite));
+            if (popupUIAction != null)
+                CombatManager.Instance.AddUIAction(popupUIAction);
 
             return damageCapMax;
         }
