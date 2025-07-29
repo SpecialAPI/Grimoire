@@ -94,7 +94,7 @@ namespace Grimoire.Content.Passive
                     doesPopup = true,
                     immediate = true,
 
-                    effect = new StatusEffectApplicationFalseSetterTriggerEffect()
+                    effect = new BoolHolderSetterTriggerffect(false)
                 }
             })
             .AddToDatabase();

@@ -10,13 +10,13 @@ namespace Grimoire.Content.TriggerEffects
 
         public override void DoEffect(IUnit sender, object args, TriggeredEffect triggerInfo, TriggerEffectExtraInfo extraInfo)
         {
-            if(!args.TryGetIntReference(out var intRef))
+            if(!ValueReferenceTools.TryGetIntHolder(args, out var intRef))
                 return;
 
             if (triggerInfo.immediate)
-                CombatManager.Instance.ProcessImmediateAction(new ImmediateEffectAction([.. effects], sender, intRef.value));
+                CombatManager.Instance.ProcessImmediateAction(new ImmediateEffectAction([.. effects], sender, intRef.Value));
             else
-                CombatManager.Instance.AddSubAction(new EffectAction([.. effects], sender, intRef.value));
+                CombatManager.Instance.AddSubAction(new EffectAction([.. effects], sender, intRef.Value));
         }
     }
 }

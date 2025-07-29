@@ -25,8 +25,8 @@ namespace Grimoire.Content.TriggerEffects
             else if (extraInfo.activation == TriggerEffectActivation.Disconnection)
                 CombatManager.Instance.AddSubAction(new PermaFieldEffectDisconnectedAction(sender, field, amount, targetOffsets, applyOnAllySlots));
 
-            else if (extraInfo.activation == TriggerEffectActivation.Trigger && args.TryGetIntReference(out var intRef))
-                CombatManager.Instance.ProcessImmediateAction(new PermaFieldEffectMoveAction(sender, intRef.value, field, amount, targetOffsets, applyOnAllySlots));
+            else if (extraInfo.activation == TriggerEffectActivation.Trigger && ValueReferenceTools.TryGetIntHolder(args, out var intRef))
+                CombatManager.Instance.ProcessImmediateAction(new PermaFieldEffectMoveAction(sender, intRef.Value, field, amount, targetOffsets, applyOnAllySlots));
         }
 
         public override bool ManuallyHandlePopup => true;
