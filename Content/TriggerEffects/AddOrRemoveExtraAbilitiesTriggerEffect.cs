@@ -9,7 +9,7 @@ namespace Grimoire.Content.TriggerEffects
         public List<ExtraAbilityInfo> abilites;
         public bool remove;
 
-        public override void DoEffect(IUnit sender, object args, TriggeredEffect triggerInfo, TriggerEffectExtraInfo extraInfo)
+        public override void DoEffect(IUnit sender, object args, TriggerEffectInfo triggerInfo, TriggerEffectActivationExtraInfo extraInfo)
         {
             if (abilites == null)
                 return;

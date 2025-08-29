@@ -484,7 +484,7 @@ namespace Grimoire.Content.Passive
                     .SetBasicInformation($"Protected ({x})", StatusField.Shield.EffectInfo.icon) // TODO: add unique passive icon
                     .AutoSetDescriptions($"Permanently applies {x} shield to this ally's position.");
 
-                var effect = new EffectsAndTrigger()
+                var effect = new TriggerEffectAndTriggerInfo()
                 {
                     trigger = TriggerCalls.OnMoved.ToString(),
                     immediate = true,

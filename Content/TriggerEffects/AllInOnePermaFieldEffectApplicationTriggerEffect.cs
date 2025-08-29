@@ -12,7 +12,7 @@ namespace Grimoire.Content.TriggerEffects
         public FieldEffect_SO field;
         public int amount;
 
-        public override void DoEffect(IUnit sender, object args, TriggeredEffect triggerInfo, TriggerEffectExtraInfo extraInfo)
+        public override void DoEffect(IUnit sender, object args, TriggerEffectInfo triggerInfo, TriggerEffectActivationExtraInfo extraInfo)
         {
             if (extraInfo.activation == TriggerEffectActivation.Connection)
             {
