@@ -62,12 +62,13 @@ namespace Grimoire.Content.StatusEffect.EffectTypes
             if (sender is not ITurn t || sender is not IStatusEffector e)
                 return;
 
-            if (args is not List<int> abs)
+            if (args is not EnemyAbilityOverrideReference absRef)
                 return;
 
             if (holder.m_ObjectData is not InsightUnitData dat || dat.abilities == null || dat.abilities.Count <= 0)
                 return;
 
+            var abs = absRef.overrideAbiltyIDs;
             abs.AddRange(dat.abilities);
             var prevContent = holder.m_ContentMain;
 
