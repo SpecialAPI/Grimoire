@@ -24,13 +24,13 @@ namespace Grimoire.Content.StatusEffect.EffectTypes
                 insightData.abilities.Sort(insightData.AbilityComparison);
             }
 
-            CombatManager.Instance.AddObserver(holder.OnEventTriggered_01, CustomTriggers.OverrideEnemyAbilityUsage, caller);
+            CombatManager.Instance.AddObserver(holder.OnEventTriggered_01, CustomTriggers.ModifyUsedEnemyAbilities, caller);
             CombatManager.Instance.AddObserver(holder.OnEventTriggered_02, TriggerCalls.OnTurnFinished.ToString(), caller);
         }
 
         public override void OnTriggerDettached(StatusEffect_Holder holder, IStatusEffector caller)
         {
-            CombatManager.Instance.RemoveObserver(holder.OnEventTriggered_01, CustomTriggers.OverrideEnemyAbilityUsage, caller);
+            CombatManager.Instance.RemoveObserver(holder.OnEventTriggered_01, CustomTriggers.ModifyUsedEnemyAbilities, caller);
             CombatManager.Instance.RemoveObserver(holder.OnEventTriggered_02, TriggerCalls.OnTurnFinished.ToString(), caller);
         }
 
@@ -62,14 +62,21 @@ namespace Grimoire.Content.StatusEffect.EffectTypes
             if (sender is not ITurn t || sender is not IStatusEffector e)
                 return;
 
-            if (args is not EnemyAbilityOverrideReference absRef)
+            if (args is not ModifyUsedEnemyAbilitiesReference absRef)
                 return;
 
             if (holder.m_ObjectData is not InsightUnitData dat || dat.abilities == null || dat.abilities.Count <= 0)
                 return;
 
-            var abs = absRef.overrideAbiltyIDs;
+            var abs = absRef.usedAbilityIDs;
+            var oldAbs = abs.ToList();
+
+            abs.Clear();
             abs.AddRange(dat.abilities);
+
+            dat.abilities.Clear();
+            dat.abilities.AddRange(oldAbs);
+
             var prevContent = holder.m_ContentMain;
 
             if (CanReduceDuration)
@@ -79,12 +86,6 @@ namespace Grimoire.Content.StatusEffect.EffectTypes
                 if (TryRemoveStatusEffect(holder, e))
                     return;
             }
-
-            dat.abilities.Clear();
-            dat.abilities.AddRange(t.GetNextAbilitySlotUsage());
-
-            if (dat.abilities.Count <= 0)
-                dat.abilities.Add(-1);
 
             dat.abilities.Sort(dat.AbilityComparison);
             e.StatusEffectValuesChanged(StatusID, holder.m_ContentMain - prevContent);

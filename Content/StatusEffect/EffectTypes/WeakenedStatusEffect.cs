@@ -33,7 +33,7 @@ namespace Grimoire.Content.StatusEffect.EffectTypes
 
         public override void OnEventCall_01(StatusEffect_Holder holder, object sender, object args)
         {
-            if (args is not IntegerReference intRef)
+            if (args is not ModifyAbilityRankReference intRef)
                 return;
 
             var totalAmount = holder.StatusContent + holder.Restrictor;
@@ -41,7 +41,7 @@ namespace Grimoire.Content.StatusEffect.EffectTypes
             if (totalAmount <= 0)
                 return;
 
-            intRef.value -= totalAmount;
+            intRef.abilityRank -= totalAmount;
         }
 
         public override void OnEventCall_02(StatusEffect_Holder holder, object sender, object args)
