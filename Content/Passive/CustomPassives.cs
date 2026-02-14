@@ -9,7 +9,6 @@ using Grimoire.Content.Effect;
 using Grimoire.Content.Misc;
 using Grimoire.Content.EffectorConditions;
 using Grimoire.Content.FieldEffects;
-using Pentacle.Effects;
 
 namespace Grimoire.Content.Passive
 {
