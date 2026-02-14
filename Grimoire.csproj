@@ -66,6 +66,7 @@
     <None Remove="Resources\StatusEffects\Insight.png" />
     <None Remove="Resources\StatusEffects\Salted.png" />
     <None Remove="Resources\Survive.png" />
+    <None Remove="Resources\UI_ManaToggle_Disabled.png" />
     <None Remove="Resources\Weakened.png" />
   </ItemGroup>
 
@@ -128,6 +129,7 @@
 
   <ItemGroup>
     <EmbeddedResource Include="AssetBundle\Assets\AssetBundles\grimoirebundle" />
+    <EmbeddedResource Include="Resources\UI_ManaToggle_Disabled.png" />
   </ItemGroup>
 
   <ItemGroup>
