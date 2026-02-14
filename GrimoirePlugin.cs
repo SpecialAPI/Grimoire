@@ -16,8 +16,13 @@ namespace Grimoire
         public const string MOD_VERSION = "0.0.1";
         public const string MOD_PREFIX = "Grimoire";
 
+        internal static Harmony HarmonyInstance;
+
         internal void Awake()
         {
+            HarmonyInstance = new Harmony(MOD_GUID);
+            HarmonyInstance.PatchAll();
+
             GrimoireProfile.TryInitializeProfile();
 
             PassiveStoredValues.Init();
