@@ -4,6 +4,7 @@ using Grimoire.Content.Intent;
 using Grimoire.Content.Misc;
 using Grimoire.Content.Passive;
 using Grimoire.Content.StatusEffect;
+using Grimoire.HealthColorOptions;
 using System;
 
 namespace Grimoire
@@ -23,6 +24,7 @@ namespace Grimoire
             HarmonyInstance = new Harmony(MOD_GUID);
             HarmonyInstance.PatchAll();
 
+            HealthColorOptionsTools.BuildUnitExtData();
             GrimoireProfile.TryInitializeProfile();
 
             PassiveStoredValues.Init();
