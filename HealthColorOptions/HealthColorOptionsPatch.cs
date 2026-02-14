@@ -10,14 +10,14 @@ namespace Grimoire.HealthColorOptions
     {
         private static readonly Sprite ManaToggle_Disabled = AdvancedResourceLoader.LoadSprite("UI_ManaToggle_Disabled");
 
-        [HarmonyPatch(typeof(CharacterCombat), MethodType.Constructor)]
+        [HarmonyPatch(typeof(CharacterCombat), MethodType.Constructor, typeof(int), typeof(int), typeof(CharacterSO), typeof(bool), typeof(int), typeof(int[]), typeof(int), typeof(BaseWearableSO), typeof(WearableStaticModifiers), typeof(bool), typeof(string), typeof(bool))]
         [HarmonyPostfix]
         private static void InitializeHealthOptionHolder_Character_Postfix(CharacterCombat __instance)
         {
             __instance.HealthOptionHolder();
         }
 
-        [HarmonyPatch(typeof(EnemyCombat), MethodType.Constructor)]
+        [HarmonyPatch(typeof(EnemyCombat), MethodType.Constructor, typeof(int), typeof(int), typeof(EnemySO), typeof(bool), typeof(int))]
         [HarmonyPostfix]
         private static void InitializeHealthOptionHolder_Enemy_Postfix(EnemyCombat __instance)
         {
