@@ -19,7 +19,7 @@ namespace Grimoire.HealthColorOptions
             dat.name = $"{MOD_PREFIX}_HealthColorHolder_USD";
             dat._UnitStoreDataID = $"{MOD_PREFIX}_HealthColorHolder";
 
-            LoadedDBsHandler.MiscDB.AddNewUnitStoreData(dat.name, dat);
+            UnitStoreData.AddCustom_Any_UnitStoreDataToPool(dat, dat._UnitStoreDataID);
         }
 
         internal static HealthColorOptionsHolder HealthOptionHolder(this IUnit unit)
