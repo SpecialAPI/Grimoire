@@ -24,7 +24,7 @@ namespace Grimoire
             HarmonyInstance = new Harmony(MOD_GUID);
             HarmonyInstance.PatchAll();
 
-            HealthColorOptionsTools.BuildUnitExtData();
+            HealthColorOptionsTools.BuildHealthColorHolderData();
             GrimoireProfile.TryInitializeProfile();
 
             PassiveStoredValues.Init();

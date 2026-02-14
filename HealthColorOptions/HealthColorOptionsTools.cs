@@ -7,14 +7,14 @@ namespace Grimoire.HealthColorOptions
 {
     public static class HealthColorOptionsTools
     {
-        private static UnitStoreData_BasicSO StoreData_UnitExt;
+        private static UnitStoreData_BasicSO StoreData_HealthColorHolder;
 
-        internal static void BuildUnitExtData()
+        internal static void BuildHealthColorHolderData()
         {
-            if (StoreData_UnitExt != null)
+            if (StoreData_HealthColorHolder != null)
                 return;
 
-            var dat = StoreData_UnitExt = CreateScriptable<UnitStoreData_BasicSO>();
+            var dat = StoreData_HealthColorHolder = CreateScriptable<UnitStoreData_BasicSO>();
 
             dat.name = $"{MOD_PREFIX}_HealthColorHolder_USD";
             dat._UnitStoreDataID = $"{MOD_PREFIX}_HealthColorHolder";
@@ -27,10 +27,10 @@ namespace Grimoire.HealthColorOptions
             if (unit == null || unit.Equals(null))
                 return null;
 
-            if (StoreData_UnitExt == null)
-                BuildUnitExtData();
+            if (StoreData_HealthColorHolder == null)
+                BuildHealthColorHolderData();
 
-            unit.TryGetStoredData(StoreData_UnitExt.name, out var hold, true);
+            unit.TryGetStoredData(StoreData_HealthColorHolder.name, out var hold, true);
 
             if (hold == null)
                 return null;
