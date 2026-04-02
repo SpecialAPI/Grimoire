@@ -27,7 +27,6 @@ namespace Grimoire
             GrimoireProfile.TryInitializeProfile();
 
             PassiveStoredValues.Init();
-            CustomDamageTypes.Init();
             CustomStatusEffects.Init();
             CustomPassives.Init();
 
