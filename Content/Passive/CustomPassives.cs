@@ -384,7 +384,7 @@ namespace Grimoire.Content.Passive
 
                     effect = new InterpolatedDamageModifierSetterTriggerEffect()
                     {
-                        status = CustomStatusEffects.Disappearing
+                        //status = CustomStatusEffects.Disappearing
                     },
                     conditions = new()
                     {

@@ -14,8 +14,6 @@ namespace Grimoire.Content.StatusEffect
         public static StatusEffect_SO Survive;
         public static StatusEffect_SO Weakened;
         public static StatusEffect_SO Insight;
-        public static StatusEffect_SO Disappearing;
-        public static StatusEffect_SO Salted;
         public static StatusEffect_SO Funky;
         public static StatusEffect_SO BadTrip;
 
@@ -54,18 +52,6 @@ namespace Grimoire.Content.StatusEffect
                 NewStatusEffect<InsightStatusEffect>("Insight_SE", "Insight_ID")
                 .SetBasicInformation("Insight", "The abilities performed by this enemy on the next turns are predetermined.\nHas no effect on party members.", "Insight")
                 .SetSounds("event:/Combat/StatusEffects/SE_Linked_Apl")
-                .AddToDatabase(true);
-
-            Disappearing =
-                NewStatusEffect<DisappearingStatusEffect>("Disappearing_SE", "Disappearing_ID")
-                .SetBasicInformation("Disappearing", "Receive half of Disappearing as damage on turn end.\nHalf of Disappearing is removed at the end of each turn.\nDisappearing damage will be prevented if this party member/enemy is Constricted.", "Disappearing")
-                .SetSounds("event:/Combat/StatusEffects/SE_Linked_Apl")
-                .AddToDatabase(true);
-
-            Salted =
-                NewStatusEffect<SaltedStatusEffect>("Salted_SE", "Salted_ID")
-                .SetBasicInformation("Salted", "Increase all other status effects on this party member/enemy by 2 on turn end.\n1 Salted is lost at the end of each turn.", "Salted")
-                .SetSounds("event:/Combat/StatusEffects/SE_Frail_Apl")
                 .AddToDatabase(true);
 
             Funky =
