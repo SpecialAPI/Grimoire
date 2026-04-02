@@ -8,7 +8,6 @@ using Grimoire.Content.TriggerEffects;
 using Grimoire.Content.Effect;
 using Grimoire.Content.Misc;
 using Grimoire.Content.EffectorConditions;
-using Grimoire.Content.FieldEffects;
 
 namespace Grimoire.Content.Passive
 {
@@ -432,7 +431,7 @@ namespace Grimoire.Content.Passive
 
                     effect = new PerformEffectTriggerEffect(new()
                     {
-                        Effects.GenerateEffect(CreateScriptable<FieldEffect_Apply_Effect>(x => x._Field = CustomFieldEffects.ShadowHands), 1, Targeting.Slot_SelfAll)
+                        //Effects.GenerateEffect(CreateScriptable<FieldEffect_Apply_Effect>(x => x._Field = CustomFieldEffects.ShadowHands), 1, Targeting.Slot_SelfAll)
                     })
                 }
             })

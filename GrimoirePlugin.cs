@@ -1,5 +1,4 @@
 ﻿using BepInEx;
-using Grimoire.Content.FieldEffects;
 using Grimoire.Content.Intent;
 using Grimoire.Content.Misc;
 using Grimoire.Content.Passive;
@@ -30,7 +29,6 @@ namespace Grimoire
             PassiveStoredValues.Init();
             CustomDamageTypes.Init();
             CustomStatusEffects.Init();
-            CustomFieldEffects.Init();
             CustomPassives.Init();
 
             StatusFieldIntents.Init();
