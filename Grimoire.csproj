@@ -14,8 +14,6 @@
 
   <ItemGroup>
     <None Remove="Resources\Berserk.png" />
-    <None Remove="Resources\FieldEffects\ShadowHands.png" />
-    <None Remove="Resources\FieldEffects\Thunderstorm.png" />
     <None Remove="Resources\Fury.png" />
     <None Remove="Resources\Intents\Intent_Threaten_11_15_Left.png" />
     <None Remove="Resources\Intents\Intent_Threaten_11_15_Right.png" />
@@ -31,10 +29,6 @@
     <None Remove="Resources\Intents\Intent_Threaten_7_10_Right.png" />
     <None Remove="Resources\Intents\Intent_Threaten_Death_Left.png" />
     <None Remove="Resources\Intents\Intent_Threaten_Death_Right.png" />
-    <None Remove="Resources\Passives\AltAttacks.png" />
-    <None Remove="Resources\Passives\Billiard.png" />
-    <None Remove="Resources\Passives\Chaos.png" />
-    <None Remove="Resources\Passives\Connoisseur.png" />
     <None Remove="Resources\Passives\Core_Blue.png" />
     <None Remove="Resources\Passives\Core_Green.png" />
     <None Remove="Resources\Passives\Core_Grey.png" />
@@ -43,36 +37,21 @@
     <None Remove="Resources\Passives\Core_Untethered.png" />
     <None Remove="Resources\Passives\Core_Yellow.png" />
     <None Remove="Resources\Passives\Disguised.png" />
-    <None Remove="Resources\Passives\Disruption.png" />
-    <None Remove="Resources\Passives\Grinding.png" />
-    <None Remove="Resources\Passives\Humorous.png" />
     <None Remove="Resources\Passives\Immaterial.png" />
-    <None Remove="Resources\Passives\Impunity.png" />
     <None Remove="Resources\Passives\Inorganic.png" />
-    <None Remove="Resources\Passives\Interpolated.png" />
-    <None Remove="Resources\Passives\Invincible.png" />
-    <None Remove="Resources\Passives\Mirage.png" />
     <None Remove="Resources\Passives\Resilient.png" />
-    <None Remove="Resources\Passives\Sacrilege.png" />
     <None Remove="Resources\Passives\Sturdy.png" />
-    <None Remove="Resources\Passives\Sweeping.png" />
-    <None Remove="Resources\Passives\Thorny.png" />
     <None Remove="Resources\Passives\Volatile.png" />
-    <None Remove="Resources\Passives\Warts.png" />
     <None Remove="Resources\PoweredUp.png" />
     <None Remove="Resources\StatusEffects\BadTrip.png" />
-    <None Remove="Resources\StatusEffects\Disappearing.png" />
     <None Remove="Resources\StatusEffects\Funky.png" />
     <None Remove="Resources\StatusEffects\Insight.png" />
-    <None Remove="Resources\StatusEffects\Salted.png" />
     <None Remove="Resources\Survive.png" />
     <None Remove="Resources\UI_ManaToggle_Disabled.png" />
     <None Remove="Resources\Weakened.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Resources\FieldEffects\ShadowHands.png" />
-    <EmbeddedResource Include="Resources\FieldEffects\Thunderstorm.png" />
     <EmbeddedResource Include="Resources\Intents\Intent_Threaten_11_15_Left.png" />
     <EmbeddedResource Include="Resources\Intents\Intent_Threaten_11_15_Right.png" />
     <EmbeddedResource Include="Resources\Intents\Intent_Threaten_16_20_Left.png" />
@@ -87,10 +66,6 @@
     <EmbeddedResource Include="Resources\Intents\Intent_Threaten_7_10_Right.png" />
     <EmbeddedResource Include="Resources\Intents\Intent_Threaten_Death_Left.png" />
     <EmbeddedResource Include="Resources\Intents\Intent_Threaten_Death_Right.png" />
-    <EmbeddedResource Include="Resources\Passives\AltAttacks.png" />
-    <EmbeddedResource Include="Resources\Passives\Billiard.png" />
-    <EmbeddedResource Include="Resources\Passives\Chaos.png" />
-    <EmbeddedResource Include="Resources\Passives\Connoisseur.png" />
     <EmbeddedResource Include="Resources\Passives\Core_Blue.png" />
     <EmbeddedResource Include="Resources\Passives\Core_Green.png" />
     <EmbeddedResource Include="Resources\Passives\Core_Grey.png" />
@@ -99,30 +74,17 @@
     <EmbeddedResource Include="Resources\Passives\Core_Untethered.png" />
     <EmbeddedResource Include="Resources\Passives\Core_Yellow.png" />
     <EmbeddedResource Include="Resources\Passives\Disguised.png" />
-    <EmbeddedResource Include="Resources\Passives\Disruption.png" />
-    <EmbeddedResource Include="Resources\Passives\Grinding.png" />
-    <EmbeddedResource Include="Resources\Passives\Humorous.png" />
-    <EmbeddedResource Include="Resources\Passives\Impunity.png" />
-    <EmbeddedResource Include="Resources\Passives\Interpolated.png" />
-    <EmbeddedResource Include="Resources\Passives\Invincible.png" />
-    <EmbeddedResource Include="Resources\Passives\Mirage.png" />
     <EmbeddedResource Include="Resources\Passives\Resilient.png" />
-    <EmbeddedResource Include="Resources\Passives\Sacrilege.png" />
     <EmbeddedResource Include="Resources\Passives\Sturdy.png" />
     <EmbeddedResource Include="Resources\Passives\Immaterial.png" />
     <EmbeddedResource Include="Resources\Passives\Inorganic.png" />
-    <EmbeddedResource Include="Resources\Passives\Sweeping.png" />
-    <EmbeddedResource Include="Resources\Passives\Thorny.png" />
     <EmbeddedResource Include="Resources\Passives\Volatile.png" />
-    <EmbeddedResource Include="Resources\Passives\Warts.png" />
     <EmbeddedResource Include="Resources\StatusEffects\BadTrip.png" />
     <EmbeddedResource Include="Resources\StatusEffects\Berserk.png" />
-    <EmbeddedResource Include="Resources\StatusEffects\Disappearing.png" />
     <EmbeddedResource Include="Resources\StatusEffects\Funky.png" />
     <EmbeddedResource Include="Resources\StatusEffects\Fury.png" />
     <EmbeddedResource Include="Resources\StatusEffects\Insight.png" />
     <EmbeddedResource Include="Resources\StatusEffects\PoweredUp.png" />
-    <EmbeddedResource Include="Resources\StatusEffects\Salted.png" />
     <EmbeddedResource Include="Resources\StatusEffects\Survive.png" />
     <EmbeddedResource Include="Resources\StatusEffects\Weakened.png" />
   </ItemGroup>
