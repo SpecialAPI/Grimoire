@@ -74,21 +74,6 @@ namespace Grimoire.Content.Intent
         public static readonly string PA_Sturdy, PA_Sturdy_Remove;
         public static readonly string PA_Resilient, PA_Resilient_Remove;
         public static readonly string PA_Volatile, PA_Volatile_Remove;
-        public static readonly string PA_Impunity, PA_Impunity_Remove;
-        public static readonly string PA_Sacrilege, PA_Sacrilege_Remove;
-        public static readonly string PA_Sweeping, PA_Sweeping_Remove;
-        public static readonly string PA_Thorny, PA_Thorny_Remove;
-        public static readonly string PA_Billiard, PA_Billiard_Remove;
-        public static readonly string PA_Connoisseur, PA_Connoisseur_Remove;
-        public static readonly string PA_Chaos, PA_Chaos_Remove;
-        public static readonly string PA_Grinding, PA_Grinding_Remove;
-        public static readonly string PA_Disruption, PA_Disruption_Remove;
-        public static readonly string PA_Interpolated, PA_Interpolated_Remove;
-        public static readonly string PA_Humorous, PA_Humorous_Remove;
-        public static readonly string PA_Mirage, PA_Mirage_Remove;
-        public static readonly string PA_Warts, PA_Warts_Remove;
-        public static readonly string PA_AltAttacks, PA_AltAttacks_Remove;
-        public static readonly string PA_Invincible, PA_Invincible_Remove;
         public static readonly string PA_Disguised, PA_Disguised_Remove;
         #endregion
 
@@ -163,21 +148,6 @@ namespace Grimoire.Content.Intent
             AddGenericAddRemoveIntents(nameof(PA_Sturdy),       CustomPassives.SturdySprite,            out PA_Sturdy,          out PA_Sturdy_Remove);
             AddGenericAddRemoveIntents(nameof(PA_Resilient),    CustomPassives.ResilientSprite,         out PA_Resilient,       out PA_Resilient_Remove);
             AddGenericAddRemoveIntents(nameof(PA_Volatile),     CustomPassives.VolatileSprite,          out PA_Volatile,        out PA_Volatile_Remove);
-            AddPassiveIntents(nameof(PA_Impunity),              CustomPassives.Impunity,                out PA_Impunity,        out PA_Impunity_Remove);
-            AddPassiveIntents(nameof(PA_Sacrilege),             CustomPassives.Sacrilege,               out PA_Sacrilege,       out PA_Sacrilege_Remove);
-            AddPassiveIntents(nameof(PA_Sweeping),              CustomPassives.Sweeping,                out PA_Sweeping,        out PA_Sweeping_Remove);
-            AddPassiveIntents(nameof(PA_Thorny),                CustomPassives.Thorny,                  out PA_Thorny,          out PA_Thorny_Remove);
-            AddPassiveIntents(nameof(PA_Billiard),              CustomPassives.Billiard,                out PA_Billiard,        out PA_Billiard_Remove);
-            AddPassiveIntents(nameof(PA_Connoisseur),           CustomPassives.Connoisseur,             out PA_Connoisseur,     out PA_Connoisseur_Remove);
-            AddPassiveIntents(nameof(PA_Chaos),                 CustomPassives.Chaos,                   out PA_Chaos,           out PA_Chaos_Remove);
-            AddPassiveIntents(nameof(PA_Grinding),              CustomPassives.Grinding,                out PA_Grinding,        out PA_Grinding_Remove);
-            AddPassiveIntents(nameof(PA_Disruption),            CustomPassives.Disruption,              out PA_Disruption,      out PA_Disruption_Remove);
-            AddPassiveIntents(nameof(PA_Interpolated),          CustomPassives.Interpolated,            out PA_Interpolated,    out PA_Interpolated_Remove);
-            AddPassiveIntents(nameof(PA_Humorous),              CustomPassives.Humorous,                out PA_Humorous,        out PA_Humorous_Remove);
-            AddPassiveIntents(nameof(PA_Mirage),                CustomPassives.Mirage,                  out PA_Mirage,          out PA_Mirage_Remove);
-            AddGenericAddRemoveIntents(nameof(PA_Warts),        CustomPassives.WartsSprite,             out PA_Warts,           out PA_Warts_Remove);
-            AddGenericAddRemoveIntents(nameof(PA_AltAttacks),   CustomPassives.AltAttacksSprite,        out PA_AltAttacks,      out PA_AltAttacks_Remove);
-            AddGenericAddRemoveIntents(nameof(PA_Invincible),   CustomPassives.InvincibleSprite,        out PA_Invincible,      out PA_Invincible_Remove);
             AddPassiveIntents(nameof(PA_Disguised),             CustomPassives.Disguised,               out PA_Disguised,       out PA_Disguised_Remove);
             #endregion
         }
