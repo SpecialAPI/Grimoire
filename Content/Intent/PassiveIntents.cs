@@ -74,7 +74,6 @@ namespace Grimoire.Content.Intent
         public static readonly string PA_Sturdy, PA_Sturdy_Remove;
         public static readonly string PA_Resilient, PA_Resilient_Remove;
         public static readonly string PA_Volatile, PA_Volatile_Remove;
-        public static readonly string PA_Disguised, PA_Disguised_Remove;
         #endregion
 
         static PassiveIntents()
@@ -148,7 +147,6 @@ namespace Grimoire.Content.Intent
             AddGenericAddRemoveIntents(nameof(PA_Sturdy),       CustomPassives.SturdySprite,            out PA_Sturdy,          out PA_Sturdy_Remove);
             AddGenericAddRemoveIntents(nameof(PA_Resilient),    CustomPassives.ResilientSprite,         out PA_Resilient,       out PA_Resilient_Remove);
             AddGenericAddRemoveIntents(nameof(PA_Volatile),     CustomPassives.VolatileSprite,          out PA_Volatile,        out PA_Volatile_Remove);
-            AddPassiveIntents(nameof(PA_Disguised),             CustomPassives.Disguised,               out PA_Disguised,       out PA_Disguised_Remove);
             #endregion
         }
 

@@ -21,8 +21,6 @@ namespace Grimoire.Content.Passive
         public static readonly BasePassiveAbilitySO CoreUntethered;
         public static readonly BasePassiveAbilitySO Immaterial;
 
-        public static readonly BasePassiveAbilitySO Disguised;
-
         internal static readonly Sprite UntetheredCoreSprite;
         internal static readonly Sprite SturdySprite;
         internal static readonly Sprite ResilientSprite;
@@ -77,30 +75,6 @@ namespace Grimoire.Content.Passive
             })
             .AddToDatabase();
 
-            Disguised = NewPassive<MultiCustomTriggerEffectPassive>("Disguised_PA", "Disguised")
-            .SetBasicInformation("Disguised", "Disguised")
-            .AutoSetDescriptions("Prevents incoming damage to this ally once and then removes this passive.")
-            .AddToGlossary("Prevents incoming damage to this party member/enemy once and then removes this passive.")
-            .SetTriggerEffects(new()
-            {
-                new()
-                {
-                    trigger = TriggerCalls.OnBeingDamaged.ToString(),
-                    immediate = true,
-                    doesPopup = true,
-
-                    effect = new MultiplierWithPerformEffectDamageModifierSetterTriggerEffect()
-                    {
-                        multiplier = 0,
-                        effects = new()
-                        {
-                            Effects.GenerateEffect(CreateScriptable<RemovePassiveEffect>(x => x.m_PassiveID = "Disguised"), 0, Targeting.Slot_SelfSlot)
-                        }
-                    }
-                }
-            })
-            .AddToDatabase();
-
             Glossary.CreateAndAddCustom_PassiveToGlossary("Pigment Core", "Unlocks the ability to change the color of this party member/enemy's health through a button next to their health bar.", UntetheredCoreSprite);
             Glossary.CreateAndAddCustom_PassiveToGlossary("Sturdy", "Damage received by this party member/enemy is rounded down to a certain amount.", SturdySprite);
             Glossary.CreateAndAddCustom_PassiveToGlossary("Resilient", "Damage received by this party member/enemy is capped at a certain amount per turn.", ResilientSprite);
@@ -140,85 +114,6 @@ namespace Grimoire.Content.Passive
 
                 return pa;
             });
-        }
-
-        public static BasePassiveAbilitySO DisguisedGenerator(CharacterSO disguisedTransformation, CharacterSO nonDisguisedTransformation)
-        {
-            if(disguisedTransformation == null)
-            {
-                Debug.LogError("Null disguised transformation.");
-                return null;
-            }
-
-            if(nonDisguisedTransformation == null)
-            {
-                Debug.LogError("Null non disguised transformation");
-                return null;
-            }
-
-            var trimmedDisguisedId = disguisedTransformation.name;
-            if (trimmedDisguisedId.EndsWith("_CH"))
-                trimmedDisguisedId = trimmedDisguisedId.Substring(0, trimmedDisguisedId.Length - "_CH".Length);
-
-            var trimmedNonDisguisedId = nonDisguisedTransformation.name;
-            if (trimmedNonDisguisedId.EndsWith("_CH"))
-                trimmedNonDisguisedId = trimmedNonDisguisedId.Substring(0, trimmedNonDisguisedId.Length - "_CH".Length);
-
-            var pa = NewPassive<MultiCustomTriggerEffectPassive>($"Disguised_{trimmedDisguisedId}_{trimmedNonDisguisedId}_PA", "Disguised")
-                .SetBasicInformation("Disguised", "Disguised")
-                .SetCharacterDescription("This party member disguises themself at the start of combat.\nPrevents incoming damage to this party member once, undisguises them and then removes this passive.");
-
-            pa.SetTriggerEffects(new()
-            {
-                new()
-                {
-                    trigger = TriggerCalls.OnCombatStart.ToString(),
-                    immediate = false,
-                    doesPopup = true,
-
-                    effect = new PerformEffectTriggerEffect(new()
-                    {
-                        Effects.GenerateEffect(CreateScriptable<CasterTransformationEffect>(x =>
-                        {
-                            x._fullyHeal = false;
-                            x._maintainTimelineAbilities = false;
-                            x._maintainMaxHealth = true;
-                            x._currentToMaxHealth = false;
-
-                            x._enemyTransformation = null;
-                            x._characterTransformation = disguisedTransformation.name;
-                        })),
-                        Effects.GenerateEffect(CreateScriptable<AddPassiveEffect>(x => x._passiveToAdd = pa), 0, Targeting.Slot_SelfSlot)
-                    })
-                },
-                new()
-                {
-                    trigger = TriggerCalls.OnBeingDamaged.ToString(),
-                    immediate = true,
-                    doesPopup = true,
-
-                    effect = new MultiplierWithPerformEffectDamageModifierSetterTriggerEffect()
-                    {
-                        multiplier = 0,
-                        effects = new()
-                        {
-                            Effects.GenerateEffect(CreateScriptable<CasterTransformationEffect>(x =>
-                            {
-                                x._fullyHeal = false;
-                                x._maintainTimelineAbilities = false;
-                                x._maintainMaxHealth = true;
-                                x._currentToMaxHealth = false;
-
-                                x._enemyTransformation = null;
-                                x._characterTransformation = nonDisguisedTransformation.name;
-                            })),
-                            Effects.GenerateEffect(CreateScriptable<RemovePassiveEffect>(x => x.m_PassiveID = "Disguised"), 0, Targeting.Slot_SelfSlot)
-                        }
-                    }
-                }
-            });
-
-            return pa;
         }
 
         public static BasePassiveAbilitySO ResilientGenerator(int count)

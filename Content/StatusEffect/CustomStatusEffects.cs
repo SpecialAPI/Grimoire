@@ -14,8 +14,6 @@ namespace Grimoire.Content.StatusEffect
         public static StatusEffect_SO Survive;
         public static StatusEffect_SO Weakened;
         public static StatusEffect_SO Insight;
-        public static StatusEffect_SO Funky;
-        public static StatusEffect_SO BadTrip;
 
         static CustomStatusEffects()
         {
@@ -52,18 +50,6 @@ namespace Grimoire.Content.StatusEffect
                 NewStatusEffect<InsightStatusEffect>("Insight_SE", "Insight_ID")
                 .SetBasicInformation("Insight", "The abilities performed by this enemy on the next turns are predetermined.\nHas no effect on party members.", "Insight")
                 .SetSounds("event:/Combat/StatusEffects/SE_Linked_Apl")
-                .AddToDatabase(true);
-
-            Funky =
-                NewStatusEffect<FunkyStatusEffect>("Funky_SE", "Funky_ID")
-                .SetBasicInformation("Funky", "Receive additional healing equal to the amount of Funky.\n1 Funky is removed at the end of each turn.", "Funky")
-                .SetSounds("event:/Combat/StatusEffects/SE_Linked_Apl")
-                .AddToDatabase(true);
-
-            BadTrip =
-                NewStatusEffect<BadTripStatusEffect>("BadTrip_SE", "BadTrip_ID")
-                .SetBasicInformation("Bad Trip", "Inflicted negative status effects are increased by the amount of Bad Trip.\n1 Bad Trip is removed at the end of each turn.", "BadTrip")
-                .SetSounds("event:/Combat/StatusEffects/SE_Cursed_Apl")
                 .AddToDatabase(true);
         }
 
