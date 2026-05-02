@@ -13,7 +13,7 @@ namespace Grimoire
     {
         public const string MOD_GUID = "BrutalOrchestraModding.Grimoire";
         public const string MOD_NAME = "Grimoire";
-        public const string MOD_VERSION = "0.0.1";
+        public const string MOD_VERSION = "0.0.2";
         public const string MOD_PREFIX = "Grimoire";
 
         internal static Harmony HarmonyInstance;
