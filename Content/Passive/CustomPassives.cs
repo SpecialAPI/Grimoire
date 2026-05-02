@@ -85,6 +85,34 @@ namespace Grimoire.Content.Passive
         {
         }
 
+        public static BasePassiveAbilitySO SturdyGenerator(int count)
+        {
+            return GetOrCreatePassive(GeneratedSturdy, count, x =>
+            {
+                var pa = NewPassive<MultiCustomTriggerEffectPassive>($"Sturdy_{x}_PA", "Sturdy")
+                    .SetBasicInformation($"Sturdy ({x})", SturdySprite)
+                    .AutoSetDescriptions($"Damage received by this ally is rounded down to {x}.");
+
+                pa.SetTriggerEffects(new()
+                {
+                    new()
+                    {
+                        trigger = TriggerCalls.OnBeingDamaged.ToString(),
+                        doesPopup = true,
+                        immediate = true,
+
+                        effect = new DamageCapDamageModifierSetterTriggerEffect()
+                        {
+                            damageCapMax = x,
+                            damageCapStoredValue = PassiveStoredValues.SturdyAddition
+                        }
+                    }
+                });
+
+                return pa;
+            });
+        }
+
         public static BasePassiveAbilitySO ProtectedGenerator(int count)
         {
             return GetOrCreatePassive(GeneratedProtected, count, x =>
