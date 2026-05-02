@@ -8,6 +8,8 @@ using System;
 
 namespace Grimoire
 {
+    [BepInDependency(BrutalAPI.BrutalAPI.GUID)]
+    [BepInDependency(PentaclePlugin.MOD_GUID)]
     [BepInPlugin(MOD_GUID, MOD_NAME, MOD_VERSION)]
     public class GrimoirePlugin : BaseUnityPlugin
     {
