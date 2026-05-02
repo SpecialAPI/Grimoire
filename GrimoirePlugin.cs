@@ -33,8 +33,6 @@ namespace Grimoire
             StatusFieldIntents.Init();
             PassiveIntents.Init();
             MiscIntents.Init();
-
-            GlossaryAdditions.Init();
         }
     }
 }
