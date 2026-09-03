@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 
-namespace Grimoire.StatusEffect.EffectTypes
+namespace Grimoire.StatusEffect
 {
     public class WeakenedStatusEffect : StatusEffect_SO
     {

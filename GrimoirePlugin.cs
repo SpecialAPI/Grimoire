@@ -2,8 +2,6 @@
 using Grimoire.HealthColorOptions;
 using Grimoire.Intent;
 using Grimoire.Misc;
-using Grimoire.Passive;
-using Grimoire.StatusEffect;
 using System;
 
 namespace Grimoire

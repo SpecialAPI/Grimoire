@@ -46,7 +46,6 @@ global using static Pentacle.Tools.IntentTools;
 global using static Pentacle.Tools.IntTools;
 
 global using Grimoire.StatusEffect;
-global using Grimoire.Passive;
 global using Grimoire.Intent;
 global using Grimoire.TriggerEffects;
 

@@ -7,7 +7,7 @@ using UnityEngine;
 using Grimoire.Misc;
 using Grimoire.Effect;
 
-namespace Grimoire.Passive
+namespace Grimoire
 {
     public static class GrimoirePassives
     {

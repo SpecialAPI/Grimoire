@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Text;
 using BrutalAPI;
-using Grimoire.Passive;
 
 namespace Grimoire.Intent
 {
