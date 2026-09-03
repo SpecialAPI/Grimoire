@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Grimoire.Content.StatusEffect.EffectTypes
+namespace Grimoire.StatusEffect.EffectTypes
 {
     public class InsightStatusEffect : StatusEffect_SO
     {

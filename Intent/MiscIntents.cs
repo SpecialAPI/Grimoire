@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Grimoire.Content.Intent
+namespace Grimoire.Intent
 {
     public static class MiscIntents
     {

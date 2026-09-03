@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Grimoire.HealthColorOptions;
 
-namespace Grimoire.Content.Effect
+namespace Grimoire.Effect
 {
-    public class AddHealthColorsNotInOptionsEffect : EffectSO
+    public class ChangeToRandomHealthColorIncludingCurrentEffect : EffectSO
     {
         public List<ManaColorSO> healthColors;
 
@@ -16,21 +15,15 @@ namespace Grimoire.Content.Effect
             if (healthColors == null || healthColors.Count <= 0)
                 return false;
 
-            foreach (var t in targets)
+            foreach(var t in targets)
             {
                 if (t == null || !t.HasUnit)
                     continue;
 
-                var u = t.Unit;
+                var col = healthColors[Random.Range(0, healthColors.Count)];
+                t.Unit.ChangeHealthColor(col);
 
-                foreach (var c in healthColors)
-                {
-                    if (u.GetHealthColorOptions().Contains(c))
-                        continue;
-
-                    u.AddHealthColor(c);
-                    exitAmount++;
-                }
+                exitAmount++;
             }
 
             return exitAmount > 0;

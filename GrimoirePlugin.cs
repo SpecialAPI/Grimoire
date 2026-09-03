@@ -1,9 +1,9 @@
 ﻿using BepInEx;
-using Grimoire.Content.Intent;
-using Grimoire.Content.Misc;
-using Grimoire.Content.Passive;
-using Grimoire.Content.StatusEffect;
 using Grimoire.HealthColorOptions;
+using Grimoire.Intent;
+using Grimoire.Misc;
+using Grimoire.Passive;
+using Grimoire.StatusEffect;
 using System;
 
 namespace Grimoire

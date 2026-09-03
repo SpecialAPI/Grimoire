@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 
-namespace Grimoire.Content.TriggerEffects
+namespace Grimoire.TriggerEffects
 {
     public class DamageCapDamageModifierSetterTriggerEffect : TriggerEffect
     {

@@ -4,12 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
-using Grimoire.Content.TriggerEffects;
-using Grimoire.Content.Effect;
-using Grimoire.Content.Misc;
-using Grimoire.Content.EffectorConditions;
+using Grimoire.Misc;
+using Grimoire.Effect;
 
-namespace Grimoire.Content.Passive
+namespace Grimoire.Passive
 {
     public static class CustomPassives
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Grimoire.Content.Misc
+namespace Grimoire.Misc
 {
     public static class PassiveStoredValues
     {

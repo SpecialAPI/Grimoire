@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 using BrutalAPI;
-using Grimoire.Content.Passive;
+using Grimoire.Passive;
 
-namespace Grimoire.Content.Intent
+namespace Grimoire.Intent
 {
     public static class PassiveIntents
     {

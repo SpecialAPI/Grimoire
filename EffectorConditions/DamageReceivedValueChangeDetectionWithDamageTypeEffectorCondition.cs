@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Grimoire.Content.EffectorConditions
+namespace Grimoire.EffectorConditions
 {
     public class DamageReceivedValueChangeDetectionWithDamageTypeEffectorCondition : EffectorConditionSO
     {

@@ -1,11 +1,11 @@
 ﻿using BrutalAPI;
-using Grimoire.Content.StatusEffect.EffectTypes;
+using Grimoire.StatusEffect.EffectTypes;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 
-namespace Grimoire.Content.StatusEffect
+namespace Grimoire.StatusEffect
 {
     public static class CustomStatusEffects
     {

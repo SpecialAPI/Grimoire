@@ -1,11 +1,11 @@
 ﻿using BrutalAPI;
-using Grimoire.Content.StatusEffect;
+using Grimoire.StatusEffect;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 
-namespace Grimoire.Content.Intent
+namespace Grimoire.Intent
 {
     public static class StatusFieldIntents
     {

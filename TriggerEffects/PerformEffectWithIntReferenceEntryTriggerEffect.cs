@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Grimoire.Content.TriggerEffects
+namespace Grimoire.TriggerEffects
 {
     public class PerformEffectWithIntReferenceEntryTriggerEffect(List<EffectInfo> effects) : TriggerEffect
     {
