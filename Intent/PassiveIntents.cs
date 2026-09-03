@@ -137,16 +137,16 @@ namespace Grimoire.Intent
             #endregion
 
             #region Modded Passive Setup
-            AddPassiveIntents(nameof(PA_CoreRed),               CustomPassives.CoreRed,                 out PA_CoreRed,         out PA_CoreRed_Remove);
-            AddPassiveIntents(nameof(PA_CoreBlue),              CustomPassives.CoreBlue,                out PA_CoreBlue,        out PA_CoreBlue_Remove);
-            AddPassiveIntents(nameof(PA_CoreYellow),            CustomPassives.CoreYellow,              out PA_CoreYellow,      out PA_CoreYellow_Remove);
-            AddPassiveIntents(nameof(PA_CorePurple),            CustomPassives.CorePurple,              out PA_CorePurple,      out PA_CorePurple_Remove);
-            AddPassiveIntents(nameof(PA_CoreGrey),              CustomPassives.CoreGrey,                out PA_CoreGrey,        out PA_CoreGrey_Remove);
-            AddPassiveIntents(nameof(PA_CoreUntethered),        CustomPassives.CoreUntethered,          out PA_CoreUntethered,  out PA_CoreUntethered_Remove);
-            AddPassiveIntents(nameof(PA_Immaterial),            CustomPassives.Immaterial,              out PA_Immaterial,      out PA_Immaterial_Remove);
-            AddGenericAddRemoveIntents(nameof(PA_Sturdy),       CustomPassives.SturdySprite,            out PA_Sturdy,          out PA_Sturdy_Remove);
-            AddGenericAddRemoveIntents(nameof(PA_Resilient),    CustomPassives.ResilientSprite,         out PA_Resilient,       out PA_Resilient_Remove);
-            AddGenericAddRemoveIntents(nameof(PA_Volatile),     CustomPassives.VolatileSprite,          out PA_Volatile,        out PA_Volatile_Remove);
+            AddPassiveIntents(nameof(PA_CoreRed),               GrimoirePassives.CoreRed,                 out PA_CoreRed,         out PA_CoreRed_Remove);
+            AddPassiveIntents(nameof(PA_CoreBlue),              GrimoirePassives.CoreBlue,                out PA_CoreBlue,        out PA_CoreBlue_Remove);
+            AddPassiveIntents(nameof(PA_CoreYellow),            GrimoirePassives.CoreYellow,              out PA_CoreYellow,      out PA_CoreYellow_Remove);
+            AddPassiveIntents(nameof(PA_CorePurple),            GrimoirePassives.CorePurple,              out PA_CorePurple,      out PA_CorePurple_Remove);
+            AddPassiveIntents(nameof(PA_CoreGrey),              GrimoirePassives.CoreGrey,                out PA_CoreGrey,        out PA_CoreGrey_Remove);
+            AddPassiveIntents(nameof(PA_CoreUntethered),        GrimoirePassives.CoreUntethered,          out PA_CoreUntethered,  out PA_CoreUntethered_Remove);
+            AddPassiveIntents(nameof(PA_Immaterial),            GrimoirePassives.Immaterial,              out PA_Immaterial,      out PA_Immaterial_Remove);
+            AddGenericAddRemoveIntents(nameof(PA_Sturdy),       GrimoirePassives.SturdySprite,            out PA_Sturdy,          out PA_Sturdy_Remove);
+            AddGenericAddRemoveIntents(nameof(PA_Resilient),    GrimoirePassives.ResilientSprite,         out PA_Resilient,       out PA_Resilient_Remove);
+            AddGenericAddRemoveIntents(nameof(PA_Volatile),     GrimoirePassives.VolatileSprite,          out PA_Volatile,        out PA_Volatile_Remove);
             #endregion
         }
 

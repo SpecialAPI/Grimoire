@@ -9,7 +9,7 @@ using Grimoire.Effect;
 
 namespace Grimoire.Passive
 {
-    public static class CustomPassives
+    public static class GrimoirePassives
     {
         public static readonly BasePassiveAbilitySO CoreRed;
         public static readonly BasePassiveAbilitySO CoreBlue;
@@ -29,7 +29,7 @@ namespace Grimoire.Passive
         private static readonly Dictionary<int, BasePassiveAbilitySO> GeneratedVolatile = [];
         private static readonly Dictionary<int, BasePassiveAbilitySO> GeneratedProtected = [];
 
-        static CustomPassives()
+        static GrimoirePassives()
         {
             GrimoireProfile.TryInitializeProfile();
 
