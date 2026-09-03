@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Grimoire.StatusEffect
 {
-    public class SurviveStatusEffect : StatusEffect_SO
+    public class SurviveSE_SO : StatusEffect_SO
     {
         public override bool IsPositive => true;
 
@@ -28,7 +28,7 @@ namespace Grimoire.StatusEffect
         }
     }
 
-    public class SurviveIntValueModifier(int survivingHealth, SurviveStatusEffect survive, IStatusEffector effector, StatusEffect_Holder holder, IUnit unit) : IntValueModifier(200)
+    public class SurviveIntValueModifier(int survivingHealth, SurviveSE_SO survive, IStatusEffector effector, StatusEffect_Holder holder, IUnit unit) : IntValueModifier(200)
     {
         public override int Modify(int value)
         {

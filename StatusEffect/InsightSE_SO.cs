@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Grimoire.StatusEffect
 {
-    public class InsightStatusEffect : StatusEffect_SO
+    public class InsightSE_SO : StatusEffect_SO
     {
         public override bool IsPositive => false;
 

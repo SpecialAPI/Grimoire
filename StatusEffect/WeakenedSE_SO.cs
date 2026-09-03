@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Grimoire.StatusEffect
 {
-    public class WeakenedStatusEffect : StatusEffect_SO
+    public class WeakenedSE_SO : StatusEffect_SO
     {
         public override bool IsPositive => false;
 

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Grimoire.StatusEffect
 {
-    public class FuryStatusEffect : StatusEffect_SO
+    public class FurySE_SO : StatusEffect_SO
     {
         public override bool IsPositive => true;
 

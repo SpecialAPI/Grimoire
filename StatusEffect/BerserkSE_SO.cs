@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Grimoire.StatusEffect
 {
-    public class BerserkStatusEffect : StatusEffect_SO
+    public class BerserkSE_SO : StatusEffect_SO
     {
         public override bool IsPositive => true;
 
