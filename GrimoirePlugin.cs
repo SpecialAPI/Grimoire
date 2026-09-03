@@ -27,7 +27,7 @@ namespace Grimoire
             GrimoireProfile.TryInitializeProfile();
 
             PassiveStoredValues.Init();
-            GrimoireStatusEffects.Init();
+            GrimoireStatusField.Init();
             GrimoirePassives.Init();
 
             StatusFieldIntents.Init();

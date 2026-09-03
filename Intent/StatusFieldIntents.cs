@@ -18,11 +18,11 @@ namespace Grimoire.Intent
         {
             GrimoireProfile.TryInitializeProfile();
 
-            AddStatusEffectIntents(nameof(Status_Berserk),      GrimoireStatusEffects.Berserk,        out Status_Berserk,         out Status_Berserk_Remove);
-            AddStatusEffectIntents(nameof(Status_Fury),         GrimoireStatusEffects.Fury,           out Status_Fury,            out Status_Fury_Remove);
-            AddStatusEffectIntents(nameof(Status_Survive),      GrimoireStatusEffects.Survive,        out Status_Survive,         out Status_Survive_Remove);
-            AddStatusEffectIntents(nameof(Status_Weakened),     GrimoireStatusEffects.Weakened,       out Status_Weakened,        out Status_Weakened_Remove);
-            AddStatusEffectIntents(nameof(Status_Insight),      GrimoireStatusEffects.Insight,        out Status_Insight,         out Status_Insight_Remove);
+            AddStatusEffectIntents(nameof(Status_Berserk),      GrimoireStatusField.Berserk,        out Status_Berserk,         out Status_Berserk_Remove);
+            AddStatusEffectIntents(nameof(Status_Fury),         GrimoireStatusField.Fury,           out Status_Fury,            out Status_Fury_Remove);
+            AddStatusEffectIntents(nameof(Status_Survive),      GrimoireStatusField.Survive,        out Status_Survive,         out Status_Survive_Remove);
+            AddStatusEffectIntents(nameof(Status_Weakened),     GrimoireStatusField.Weakened,       out Status_Weakened,        out Status_Weakened_Remove);
+            AddStatusEffectIntents(nameof(Status_Insight),      GrimoireStatusField.Insight,        out Status_Insight,         out Status_Insight_Remove);
         }
 
         internal static void Init()

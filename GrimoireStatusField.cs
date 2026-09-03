@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Grimoire
 {
-    public static class GrimoireStatusEffects
+    public static class GrimoireStatusField
     {
         public static StatusEffect_SO Berserk;
         public static StatusEffect_SO Fury;
@@ -14,7 +14,7 @@ namespace Grimoire
         public static StatusEffect_SO Weakened;
         public static StatusEffect_SO Insight;
 
-        static GrimoireStatusEffects()
+        static GrimoireStatusField()
         {
             GrimoireProfile.TryInitializeProfile();
 
