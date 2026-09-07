@@ -1,4 +1,5 @@
 ﻿using BrutalAPI;
+using Grimoire.FieldEffect;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -14,6 +15,8 @@ namespace Grimoire
         public static StatusEffect_SO Weakened;
         public static StatusEffect_SO Insight;
 
+        public static FieldEffect_SO Mist;
+
         static GrimoireStatusField()
         {
             GrimoireProfile.TryInitializeProfile();
@@ -21,6 +24,7 @@ namespace Grimoire
             LoadedDBsHandler.GlossaryDB.AddNewStatusID(StatusField.Gutted.EffectInfo);
             LoadedDBsHandler.GlossaryDB.AddNewStatusID(StatusField.Stunned.EffectInfo);
 
+            // Status Effects
             Berserk =
                 NewStatusEffect<BerserkSE_SO>("Berserk_SE", "Berserk_ID")
                 .SetBasicInformation("Berserk", "Deal double damage.\n1 point of Berserk is lost at the end of each turn.", "Berserk")
@@ -49,6 +53,14 @@ namespace Grimoire
                 NewStatusEffect<InsightSE_SO>("Insight_SE", "Insight_ID")
                 .SetBasicInformation("Insight", "The abilities performed by this enemy on the next turns are predetermined.\nHas no effect on party members.", "Insight")
                 .SetSounds("event:/Combat/StatusEffects/SE_Linked_Apl")
+                .AddToDatabase(true);
+
+            // Field Effects
+            Mist =
+                NewFieldEffect<MistFE_SO>("Mist_FE", "Mist_ID")
+                .SetBasicInformation("Mist", "Enemies in Mist have their abilities hidden on the timeline.\n1 Mist is lost at the end of each turn.", "Mist")
+                .SetSounds("event:/Combat/StatusEffects/SE_Fire_Apl")
+                .SetFieldPrefabs(StatusField.OnFire.EffectInfo.m_CharacterLayoutTemplate, StatusField.OnFire.EffectInfo.m_EnemyLayoutTemplate)
                 .AddToDatabase(true);
         }
 
