@@ -80,7 +80,6 @@
     <EmbeddedResource Include="Resources\Passives\Immaterial.png" />
     <EmbeddedResource Include="Resources\Passives\Inorganic.png" />
     <EmbeddedResource Include="Resources\Passives\Volatile.png" />
-    <EmbeddedResource Include="Resources\StatusEffects\Berserk.png" />
     <EmbeddedResource Include="Resources\StatusEffects\Fury.png" />
     <EmbeddedResource Include="Resources\StatusEffects\Insight.png" />
     <EmbeddedResource Include="Resources\StatusEffects\PoweredUp.png" />
