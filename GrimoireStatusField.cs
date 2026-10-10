@@ -38,7 +38,7 @@ namespace Grimoire
 
             Weakened =
                 NewStatusEffect<WeakenedSE_SO>("Weakened_SE", "Weakened_ID")
-                .SetBasicInformation("Weakened", "Weakened party members are 1 level lower than they would be otherwise for each point of Weakened.\nDamage dealt by Weakened enemies is divided by 1 plus 0.25 multiplied by the amount of Weakened..\n1 point of Weakened is lost at the end of each turn.", "Weakened")
+                .SetBasicInformation("Weakened", "Weakened party members are 1 level lower than they would be otherwise for each point of Weakened.\nDamage dealt by Weakened enemies is reduced by the amount of Weakened, down to a minimum of 1.\n1 point of Weakened is lost at the end of each turn.", "Weakened")
                 .SetSounds("event:/Combat/StatusEffects/SE_Frail_Apl")
                 .AddToDatabase(true);
 

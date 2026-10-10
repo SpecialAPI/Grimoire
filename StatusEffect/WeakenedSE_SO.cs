@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Grimoire.Misc;
 using UnityEngine;
 
 namespace Grimoire.StatusEffect
@@ -56,11 +57,8 @@ namespace Grimoire.StatusEffect
 
             if (totalAmount <= 0)
                 return;
-
-            var mult = 1f / (1f + 0.25f * totalAmount);
-            var reduction = 1f - mult;
-
-            ex.AddModifier(new PercentageValueModifier(true, Mathf.RoundToInt(100f * reduction), false));
+            
+            ex.AddModifier(new SubtractionWithMinimumValueModifier(true, totalAmount, 1));
         }
 
         public override bool TryAddContent(StatusEffect_Holder holder, int content, int restrictor)
