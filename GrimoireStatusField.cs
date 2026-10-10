@@ -26,7 +26,7 @@ namespace Grimoire
             // Status Effects
             Fury =
                 NewStatusEffect<FurySE_SO>("Fury_SE", "Fury_ID")
-                .SetBasicInformation("Fury", "When performing an ability, repeat it for each point of Fury and remove all Fury.", "Fury")
+                .SetBasicInformation("Fury", "Before performing an ability, repeat it for each point of Fury, decreasing Fury by 1 after each repeat.", "Fury")
                 .SetSounds("event:/Combat/StatusEffects/SE_Focus_In")
                 .AddToDatabase(true);
 
