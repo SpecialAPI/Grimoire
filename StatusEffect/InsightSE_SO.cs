@@ -34,6 +34,14 @@ namespace Grimoire.StatusEffect
             CombatManager.Instance.RemoveObserver(holder.OnEventTriggered_02, TriggerCalls.OnTurnFinished.ToString(), caller);
         }
 
+        public override bool CanBeRemoved(StatusEffect_Holder holder)
+        {
+            if (holder.m_ObjectData is InsightUnitData { unit: IUnit { IsUnitCharacter: true }, canBeRemoved: false })
+                return false;
+            
+            return base.CanBeRemoved(holder);
+        }
+
         public override string DisplayText(StatusEffect_Holder holder)
         {
             var duration = base.DisplayText(holder);
@@ -80,12 +88,12 @@ namespace Grimoire.StatusEffect
             var prevContent = holder.m_ContentMain;
 
             if (CanReduceDuration)
-            {
                 holder.m_ContentMain = Mathf.Max(0, prevContent - 1);
 
-                if (TryRemoveStatusEffect(holder, e))
-                    return;
-            }
+            dat.canBeRemoved = true;
+            if (TryRemoveStatusEffect(holder, e))
+                return;
+            dat.canBeRemoved = false;
 
             dat.abilities.Sort(dat.AbilityComparison);
             e.StatusEffectValuesChanged(StatusID, holder.m_ContentMain - prevContent);
@@ -104,6 +112,7 @@ namespace Grimoire.StatusEffect
     {
         public ITurn unit;
         public List<int> abilities = [];
+        public bool canBeRemoved = false;
 
         public int AbilityComparison(int ab1, int ab2)
         {
