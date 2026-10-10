@@ -36,7 +36,7 @@ namespace Grimoire.StatusEffect
 
         public override bool CanBeRemoved(StatusEffect_Holder holder)
         {
-            if (holder.m_ObjectData is InsightUnitData { unit: IUnit { IsUnitCharacter: true }, canBeRemoved: false })
+            if (holder.m_ObjectData is InsightUnitData { unit: IUnit { IsUnitCharacter: false }, canBeRemoved: false })
                 return false;
             
             return base.CanBeRemoved(holder);
