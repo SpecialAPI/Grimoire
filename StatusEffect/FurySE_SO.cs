@@ -12,13 +12,11 @@ namespace Grimoire.StatusEffect
         public override void OnTriggerAttached(StatusEffect_Holder holder, IStatusEffector caller)
         {
             CombatManager.Instance.AddObserver(holder.OnEventTriggered_01, CustomTriggers.OnBeforeAbilityEffects, caller);
-            CombatManager.Instance.AddObserver(holder.OnEventTriggered_02, TriggerCalls.OnTurnFinished.ToString(), caller);
         }
 
         public override void OnTriggerDettached(StatusEffect_Holder holder, IStatusEffector caller)
         {
             CombatManager.Instance.RemoveObserver(holder.OnEventTriggered_01, CustomTriggers.OnBeforeAbilityEffects, caller);
-            CombatManager.Instance.RemoveObserver(holder.OnEventTriggered_02, TriggerCalls.OnTurnFinished.ToString(), caller);
         }
 
         public override void OnEventCall_01(StatusEffect_Holder holder, object sender, object args)
@@ -35,14 +33,6 @@ namespace Grimoire.StatusEffect
                 CombatManager.Instance.AddSubAction(effects);
                 CombatManager.Instance.AddSubAction(new ReduceStatusDurationAction(this, holder, effector));
             }
-        }
-
-        public override void OnEventCall_02(StatusEffect_Holder holder, object sender, object args)
-        {
-            if (sender is not IStatusEffector effector)
-                return;
-
-            ReduceDuration(holder, effector);
         }
     }
 
