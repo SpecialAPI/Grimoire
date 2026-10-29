@@ -35,6 +35,8 @@ namespace Grimoire.Misc
 
                     slot.isSecret = shouldBeHidden;
                     slot.timelineIcon = slot.isSecret ? null : en.Portrait;
+                    if(!slot.isSecret)
+                        slot.ability = en.GetAbilityBySlotID(slot.abilitySlotID);
 
                     var abSlotID = slot.abilitySlotID;
                     if(abSlotID >= 0 && abSlotID < en.AbilityTimelineSlots.Count)
